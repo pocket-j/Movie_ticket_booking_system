@@ -61,22 +61,6 @@ def entry():
     return render_template("open.html")
 
 
-'''
-
-@app.route("/", methods=["GET", "POST"])
-def index():
-    if request.method == "POST":
-        location = request.form.get("location")
-        movie = request.form.get("movie")
-        theater = request.form.get("theater")
-        screen = request.form.get("screen")
-        seat = request.form.get("seat")
-        li = [location, movie, theater, screen, seat]
-        return render_template("form.html", output_data=li)
-    return render_template("form.html")
-
-'''
-
 if __name__ == "__main__":
     database()
     app.run(host="127.0.0.1", port=8080, debug=True)
