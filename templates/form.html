@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<style>
+
+label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 80px;
+    text-align:right;
+}
+
+input{
+    display: inline-block;
+    float: left;
+}
+
+.container{
+    text-align: center;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: green;
+  color: white;
+  text-align: center;
+  height:35px
+}
+</style>
+<body>
+
+
+<h2>Movie Booking System</h2>
+<p>Welcome to the world of movies!! <b>You can search by Location or by Movie</b><br>
+Once you have found the perfect watch <b>input all the values and select the Book button</b> <br>
+Grab some fresh popcorn while we finish the booking!!</p>
+<form action="" method="post">
+    <label>Location : &nbsp</label><input type="text" name="location" ><br><br>
+    <label>Movie : &nbsp</label> <input type="text" name="movie"><br><br>
+    <label>Theatre: &nbsp </label><input type="text" name="theatre"><br><br>
+    <label>Screen :&nbsp </label><input type="text" name="screen"><br><br>
+    <label>Showtime  : &nbsp</label><input type="text" name="showtime"><br><br>
+    <label>Seat  : &nbsp</label><input type="text" name="seat"><br><br>
+    <div class = "container">
+    <input type="submit" name="Search" value="Search"></div>
+    {% if status %}
+    <div class = "container">
+    <input type="submit" name="Book" value="Book"></div>
+    {% endif %}
+</form>
+
+<br>
+<br>
+<br>
+{% if output_data %}
+<table>
+    <thead>
+    <tr>
+        <th>Movie</th>
+        <th>Theatre</th>
+        <th>Location</th>
+        <th>Showtime</th>
+        <th>Screen</th>
+        <th>Available Seats</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for row in output_data %}
+            <tr>
+                <td>{{row["movie_name"]}}</td>
+                <td>{{row["theatre_name"]}}</td>
+                <td>{{row["location"]}}</td>
+                <td>{{row["showtime"]}}</td>
+                <td>{{row["screen"]}}</td>
+                <td>{{row["available_seats"]}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+
+{% if booking_status == 1 %}
+    <p>Booking is successful!!!</p>
+{% elif booking_status == 2 %}
+    <p>Booking is Unsuccessful!!!</p>
+{% endif %}
+<div class="footer">
+  <p>For the love of good cinema!!</p>
+</div>
+</body>
+</html>

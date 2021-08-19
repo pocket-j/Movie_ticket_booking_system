@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<style>
+    .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: green;
+  color: white;
+  text-align: center;
+}
+h2.ex1{
+    padding-top: 50px
+
+}
+p.ex2{
+    color:red;
+    text-align: center;
+}
+</style>
+<body>
+
+<h2 class = "ex1"><center>Movie Booking System</center></h2>
+<center>
+<form action="" method="post">
+    User Name: <input type="text" name="username"><br><br>
+    Password   : <input type="password" name="password"><br><br>
+    <input type="submit" name="Login" value="Login">
+</form>
+    </center>
+<br>
+{% if status == False %}
+<p class = "ex2">Invalid username or password</p>
+{% endif %}
+<div class="footer">
+  <p>For the love of good cinema!!</p>
+</div>
+</body>
+</html>
