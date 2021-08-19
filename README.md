@@ -1,16 +1,26 @@
 # Movie_ticket_booking_system
 This project mimics the backend of a movie ticket service like bookmyshow.
 
-The functionalities -> 
+## The functionalities
   1) A guest user can view the available movies either by location or by movie name.
   2) New users can sign up and log into the system.
   3) To book a ticket user has to be logged in. (A guest cannot book a ticket)
   4) User has to provide all the necessary details to book the ticket
 
-Tech stack used for this project ->
+## Tech stack used for this project
   1) Python 
   2) Flask 
   3) Sqlite
+
+## To run the app 
+    Download and unzip the project
+    Go to the location of project directory in cmd prompt
+    Use pip to install Flask 
+    Run main.py
+    Open http://127.0.0.1:8080/ in your browser
+
+## Screenshots of the app
+    
  
 ![start_page](https://user-images.githubusercontent.com/68226142/130142461-17006fc9-6e18-456b-b092-83bb7c2b3dd2.JPG)
 
